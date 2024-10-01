@@ -9,18 +9,18 @@
         body {
             background-color: #f2f2f2; /* Solid background color for the rest of the page */
             font-family: Arial, sans-serif;
-            color: white;
+            color: black; /* Change text color for better contrast */
             margin: 0;
             padding: 0;
             min-height: 100vh;
         }
 
-        /* Background image for the top third of the page */
+        /* Background image for the top quarter of the page */
         .header {
             background-image: url('https://i0.wp.com/ketto.blog/wp-content/uploads/2022/03/15-Best-Fundraising-Campaign-Ideas-for-Underprivileged-Children.png?fit=1024%2C576&ssl=1');
             background-size: cover;
             background-position: center;
-            height: 33vh; /* Set to occupy one-third of the viewport height */
+            height: 25vh; /* Set to occupy one-fourth of the viewport height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -128,47 +128,16 @@
         <input id="last_name" maxlength="80" name="last_name" size="20" type="text" required />
 
         <label for="company">Company</label>
-        <input id="company" maxlength="40" name="company" size="20" type="text" required />
-        
+        <input id="company" maxlength="40" name="company" size="20" type="text" />
+
         <label for="phone">Phone</label>
         <input id="phone" name="Phone" maxlength="15" minlength="10" size="10" type="tel" pattern="\d{10,15}" required />
-        <span class="error-message" id="phoneError">Please enter a valid phone number (10-15 digits).</span>
-
-        <label for="email">Email</label>
-        <input id="email" maxlength="80" name="email" size="20" type="email" required />
-        <span class="error-message" id="emailError">Please enter a valid email address.</span>
+        <span class="error-message">Please enter a valid phone number (10-15 digits).</span>
 
         <label for="title">Title</label>
-        <input id="title" maxlength="40" name="title" size="20" type="text" required />
+        <input id="title" maxlength="40" name="title" size="20" type="text" />
 
         <input type="submit" name="submit" value="Submit">
     </form>
-
-    <script>
-        document.getElementById("myForm").addEventListener("submit", function(event) {
-            var phoneInput = document.getElementById("phone").value;
-            var emailInput = document.getElementById("email").value;
-            var phoneError = document.getElementById("phoneError");
-            var emailError = document.getElementById("emailError");
-            var phonePattern = /^\d{10,15}$/; // Regular expression for 10-15 digits
-            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Basic email pattern
-
-            // Validate phone number
-            if (!phonePattern.test(phoneInput)) {
-                phoneError.style.display = "block";
-                event.preventDefault(); // Prevent form submission
-            } else {
-                phoneError.style.display = "none";
-            }
-
-            // Validate email address
-            if (!emailPattern.test(emailInput)) {
-                emailError.style.display = "block";
-                event.preventDefault(); // Prevent form submission
-            } else {
-                emailError.style.display = "none";
-            }
-        });
-    </script>
 </body>
 </html>
